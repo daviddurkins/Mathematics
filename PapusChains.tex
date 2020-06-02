@@ -1,0 +1,226 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry} % set the margins to 1in on all sides
+\usepackage{graphicx} % to include figures
+\usepackage{amsmath} % additional math symbols.
+\usepackage{amsfonts} % additional math fonts.
+\usepackage{amsthm} % better theorem environments
+\usepackage{amssymb}
+
+% shorthand for various theorem environments, numbered by section
+
+\newtheorem{thm}{Theorem}%[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{mydef}{Definition}
+
+\newcommand{\la}{\LaTeX} % shorthand... instead of typing `\LaTeX' every time I want
+% to use the fancy Latex expression.
+\newcommand{\bbn}{\mathbb{N}}
+\newcommand{\bbz}{\mathbb{Z}}
+\newcommand{\bbq}{\mathbb{Q}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\emf}{\usefont{OT1}{cmr}{bx}{it}}
+
+\usepackage{graphicx}
+\graphicspath{ Proposition4.JPG }
+
+\begin{document}
+
+\title{Math 194, Spring 2019: Pappus Chains}
+\author{David Durkin }
+\date{June 7th, 2019}
+
+
+\maketitle
+
+\begin{abstract}
+The Pappus Chain, a geometrical construction of infinitely tangent circles constrained to an arbelos, embodies elegance and history. Topics from Archimedes and Euclid are discussed to establish a foundation for construction, while inversion and quadratic equations by Descartes and others expound upon principles found in the chain, carrying topics of debate and interest. From the Pappus chain, it can be concluded that it is useful for instruction and art, but practical applications are scarce.
+\end{abstract}
+
+\section{Introduction}
+\hspace{\parindent} Throughout history, many have marvelled at the beauty found in mathematics and geometry. An elegance arises when things that appear to be simple can be ordered or viewed under a lens of numbers and theorems. The symmetries in Islamic tiling, the pattern of a Fibonacci spiral found pervasive in nature, the Golden Ratio constructed in ancient architecture; all these things and many more speak to a part of the soul that feels mysterious, but also calculable. One such structure that has caught the attention of mathematicians over the millenia is the Pappus Chain, an infinite series of tangent circles confined in an arbelos. This simple packing of circles has been studied by some of the greatest, and has embodied fascinating principles and properties that are complex, yet poetic. Observing the Pappus chain requires one to have a thorough knowledge of geometry, but allows one to practice their geometric skills in an exciting and engaging way. 
+
+\section{Formation and Foundations}
+\hspace{\parindent} After Euclid's \textit{Elements} was written in 300 BC, it was suspected that Archimedes’ \textit{Book of Lemmas} was an extension of those geometric foundations. Compiled by Greek writers, and first referenced by Th$\overline{a}$bit ibn Qurra in 826AD, the \textit{Book of Lemmas} consists of 15 geometrical proofs concerning circles (pg. 301 Heath). In proposition 4, Archimedes introduces a geometrical figure he called an  “$\alpha \rho \beta \eta \lambda o \sigma$”, or arbelos, which he continues upon through proposition 8. The shape is formed when 3 semicircles share a line $\overline{AC}$, where the diameter of the two smaller semicircles is formed by a point $B$ on $\overline{AC}$, creating $\overline{AB}$ and $\overline{BC}$. Archimedes found the area of this shape to equal the area of a circle constructed using the diameter $\overline{BD}$, a line perpendicular to $\ovelrine{AC}$ at point $B$, and intersecting the arc $AC$ at point $D$ (See figure 1). 
+\begin{center}
+\includegraphics[width=10cm,scale=0.5]{Proposition4}\\
+Figure 1.   The Arbelos and circle of equal area
+\end{center}
+
+Archimedes continues to prove properties about the arbelos in his lemmas, but most notable to us  is the construction of a circle that fits in the arbelos, tangent to all three semicircles. A circle touching another circle tangentially is said to be “kissing”.  When a circle is kissing two or more circles , it is said to be common to those circles. Constructing a circle common to these semicircles can be tricky, but there are multiple ways to do so. Let us first start with the construction of a common circle in an arbelos, as Archimedes would have done, with only a straightedge and compass, without numerical values for lengths.
+
+1. From a line $\overline{AC}$, with an arbitrary point B that lies on $\overline{AC}$, draw three semicircles, 
+
+\hspace{15}with arcs $AC$, $AB$, and $BC$, where arcs $AB$ and $AC$ are inscribed in the semicircles 
+
+\hspace{15}$AC$
+
+2. Let $\overline{MN}$ be the perpendicular bisector of $\overline{AC}$
+
+3. Draw a perpendicular line at point $B$ and mark the intersection with arc $AC$ as point 
+
+\hspace{15}$D$
+
+4. Let $E$ and $G$ be the midpoints of arcs $AB$ and $BC$ respectively, marking the tops of 
+
+\hspace{15}the smaller semicircles 
+
+5. Let the intersections of the line $\overline{EG}$ with $\overline{MN}$ and $\overline{BD}$ be points $I$ and $J$ respectively
+
+6. Draw a circle $\bigodot$ $O$ about the diameter of $\overline{IN}$, tangent the arc $AC$ by construction
+
+7. Draw a circle $\bigodot$ $O_2$ about the diameter of $\overline{JB}$
+
+8. Mark the intersection of circle $\bigodot$ $O_2$ with arcs $AB$ and $BC$ as points $P_1$ and $P_2$
+
+9. Construct a circle $\bigodot$ $O_3$ through points $C$, $B$, and $P_1$, and mark the intersection with 
+
+\hspace{15}arc $AC$ as $P_3$ (figure 2a)
+
+10. Draw a circle $\bigodot$ $P$ intersecting $P_1$, $P_2$, and $P_3$ (Schoch)(figure 2b)
+\begin{center}
+\includegraphics[scale=.35]{Figure1a.jpg}
+
+Figure 2a. Archimedes circles in Arbelos and the Bankroff Circle
+\end{center}
+
+\begin{center}
+\includegraphics[scale=.35]{figure1b.jpg}
+
+Figure 2b. The first Pappus circle
+\end{center}
+
+The circles $\bigodot$ $O$ and $\bigodot$ $O_2$ are known as Archimedean circles, defined in Proposition 5, all of equal area. Additionally, $\bigodot$ $O_2$ is known as a Bankoff circle, coined by Leon Bankoff in 1974. From these circles, we have constructed our first circle $\bigodot$ $P$, tangent to arc $AC$, $AB$, and $BC$, common to all three semicircles.
+
+Another way to pack a fourth circle tangent to the other three of known radii was stated by Descartes. In 1643, in a letter to Princess Elisabeth of the Palatinate, Descartes briefly touched on the matter, stating that 4 common circles satisfy the quadratic equation 
+\begin{align*}
+    (x+y+z+w)^2=2(x^2+y^2+z^2+w^2),
+\end{align*} ascribing his name to the theorem.  Descartes theorem employs the curvature of a circle, defined by $k= \pm  1/r$, $r$ being the radius. A negative is designated to the curvature of a circle that circumscribes the other circles, making those three other circles internally tangent to the larger. So, for our present example of fitting a 4th circle betwixt our 3 semicircles, we need to know their radii. Lets say $AC = 1$, $AB= \frac{1}{2}$, $BC= \frac{1}{2}$ , and thus their curvatures would be $k_{AC} =-1$, $k_{AB} =2$, $k_{BC} =2$, where $k_{AC}$ is negative since it circumscribes the other 2 circles. Solving for $k_P$ we find
+\begin{align*}
+    (k_{AC}+k_{AB}+k_{BC}+k_{P})^2 &= 2*(k_{AC}^2+k_{AB}^2+k_{BC}^2+k_{P}^2)\\
+    (-1+2+2+k_{P})^2 &= 2*(-1^2+2^2+2^2+k_{P}^2)\\
+    (3+k_{P})^2 &= 2*(9+k_{P}^2)\\
+    (9+6k_{P}+k_{P}^2) &= 18 +2k_{P}^2\\
+    0 &= k_{P}^2 - 6k_{P}+9\\
+    k_{P} &= 3
+\end{align*}
+Thus the radius of our fourth circle is $\frac{1}{3}$. Fitting this in the correct location can be done by simple geometric properties, knowing that the radii of both circles meet at the point where the circles are tangent. 
+
+But what do we do if we do not know the radii, and we aren't constrained to an arbelos. This was a problem Apollonius of Perga sought to solve in the 3rd century B.C.. His goal was to construct a circle tangent to three others given in a plane, which he famously accomplished in his work, $E \pi \alpha \phi \alpha \iota$, or Epaphi. While his work was lost, it was reported in the 8 book series, \textit{Synagoge}, by Pappus of Alexandria in 340AD (Dedron).  Pappus refers to Apollonius' method, performing an arduous process possibly involving hyperbolas. While it is not entirely certain, many have tried to reverse engineer Pappus' work to uncover Apollonius'. Pappus' use of Apollonius' finding allowed him to create an infinite series of circles constructed in an arbelos such that the $nth$ circle of the chain is tangent to the former $n-1th$ and latter $n+1th$ circle, as well as two of the three semicircles of the arbelos. While Pappus was able to use Archimedes method to place the first circle in the chain, he required Apollonius’ to nest the rest. In present day construction, Bankoff noted that his second Archimedian circle constructed above "has been a convenient device for sidestepping complicated and undecipherable diagrams", referring to the method of Apollonius (Bankoff). The result, beautifully seen below, is known today as a Pappus Chain.
+
+\begin{center}
+    \includegraphics[scale=.6]{figure3.png}
+\end{center}
+
+\section{Inversion}
+\hspace{\parindent}Not only does the Pappus Chain exhibit contributions to geometry by some of the most influential mathematicians of all time, a curious phenomenon arises when one begins to invert these circles about another, and observe the ratios of the radii of the nested circles. To introduce inversion, let us begin by inverting a point $P$ about a circle $\bigodot O$ takes the point to $P'$, such that 
+\begin{align*}
+    \frac{\overline{OP}}{r}=\frac{r}{\overline{OP'}} \implies \overline{OP}*\overline{OP'}= r^2
+\end{align*}
+Where $r$ is the radius. For example, if $|\overline{OP}|= 3$ in a circle of radius $r=6$, then $|\overline{OP'}|= \frac{r^2}{3} = 12$, where $P'$ is on a line $L$ that passes through points $O$ and $P$(Fig 4a.). 
+
+Key facts of inversion are keen to remember. If a point $P$ lies on the circumference of the circle of inversion, it inverts to the same location. Additionally, if a point is located at or near the origin of the circle of inversion, it inverts off into infinity. Harnessing this transformation, inverting the locus of points of a circle within the circle of inversion maps to an external circle, and vice versa (Fig 4b.). If you invert a circle that passes through the origin of the circle you are inverting about, then it maps to a straight line (Fig 4c.) (Coxeter) (Figure 4).
+\begin{center}
+\includegraphics[scale=.7]{figure4.JPG}
+Figure 4. Inversion of a (a.)point, (b.)circle, and (c.)intersecting circle about a circle
+\end{center}
+
+A helpful analogy is to imagine an cylindrical mirror. Externally, if you put a circle up to a mirror like this, you see a smaller circle in the reflection. If you put a string or straight edge up to the mirror, touching and tangent to it, you see in the reflection a curve that has no end, which we can assume loops to the origin. And even if we step far off, miles away from our mirror, if we were to look back with a telescope, we would still be reflected in the image, as small as we might be, similar to how points at infinity map to the origin. 
+
+Studies of inversion began formally in the 19th century, by mathematicians such as Dandelin (1822), Quetelet (1823), Steiner(1824), and even Mobius (1854), with publications and definitions arising from multiple sources in those twenty years. Patterson write in \textit{The Origins of the Geometric Principle of Inversion} that its hard to pin down exactly who is "indebted for the invention of the fruitful version of geometry". Patterson states "it does not appear that either of these discoveries sprang full grown into being, but rather each was the natural step in a sequence of events which had been moving along slowly for many years". Much like many other areas of mathematics, this subject was passed around before it was fully established as a field of study. Nonetheless, its applications to the Pappus chain produce fascinating results. 
+\section{Curious Phenomenon}
+\hspace{\parindent}Let us construct a Pappus chain, from which we will observe a unique property by inversion about another circle. 
+
+1. Draw a circle $\bigodot{C}$ of arbitrary size, with a diameter $\overline{AC}$
+
+2. Bisect $\overline{AC}$ at point $B$ and construct two circles about $\overline{AB}$ and $\overline{BC}$, named $\bigodot{C_1}$ and
+
+\hspace{15}$\bigodot{C_2}$
+
+3. Using whichever method proffered, construct $\bigodot{C_3}$ tangent to $\bigodot{C}$, $\bigodot{C_1}$, and 
+
+\hspace{15} $\bigodot{C_2}$. This is the first Pappus circle of our chain
+
+4. Repeat the process \textit{ad infinitum}, constructing $\bigodot{C_n}$ tangent to $\bigodot{C_{n-1}}$, $\bigodot{C_1}$, and 
+
+\hspace{15} $\bigodot{C}$. This is the general Pappus chain (figure 3)
+
+5. Construct a circle $\bigodot{S}$ centered at point $A$ with radius $\overline{|AB|}$. This will be the circle 
+
+\hspace{15}we invert about 
+
+6. Label the point of intersection of $\bigodot{C}$ and $\bigodot{S}$ $D$ and $E$
+
+7. Invert $\bigodot{C}$ about $\bigodot{S}$, forming a straight line $L_1$ through $D$ and $E$
+
+8. Invert $\bigodot{C_1}$ about $\bigodot{S}$. Since $\bigodot{C_1}$ and $\bigodot{S}$ kiss at point $B$, and $\bigodot{C_1}$ intersects 
+
+\hspace{15}the origin of $\bigodot{S}$, $\bigodot{C_1}$ will invert to a line $L_2$ through $B$. $\bigodot{C_1}$ and $\bigodot{C}$ intersect  
+
+\hspace{15}at point $A$, so their inversion will share a point at infinity. But two lines that share a  
+
+\hspace{15}point at infinity never meet, so $L_1$ and $L_2$ must be parallel (Euclids 5th Postulate)
+
+9. Invert $\bigodot{C_2}$ about $\bigodot{S}$. If circles kiss in the plane then they kiss in the inversion.  
+
+\hspace{15}Since $\bigodot{C_2}$ kisses $\bigodot{C}$ and $\bigodot{C_1}$, which correspond to $L_1$ and $L_2$ respectively, at  
+
+\hspace{15}points $C$ and $B$, then the inverted circle $\bigodot{C_{2}'}$ will kiss $L_1$ and $L_2$
+
+10. Continuing this idea, invert  $\bigodot{C_3}$ about $\bigodot{S}$. Since  $\bigodot{C_3}$ kisses $\bigodot{C}$, $\bigodot{C_1}$, and 
+
+\hspace{15}$\bigodot{C_2}$, in the inversion it will kiss $L_1$, $L_2$, and $\bigodot{C_{2}'}$
+
+\begin{center}
+    \includegraphics[scale=.7]{figure5.JPG}
+    Figure 5. Inverted Pappus Chain about circle $\bigodot{s}$
+\end{center}
+
+Continuing this process creates a row of circles constrained between the two lines, each circle kissing the next. This stack continues on into infinity, and it is easy to see why. Since each circle of the Pappus chain is tangent to $\bigodot{C}$ and $\bigodot{C_1}$, and to the former and latter circles in the sequence, since kissing occurs at a shared point, it must invert to a shared point. What is remarkable is that each inverted circle is the same size, whereas they could have decrease or increased the farther away from the original inversion you were. 
+   
+Concerning their radii, the sequence is $\frac{1}{2}$, $\frac{1}{3}$, $\frac{1}{6}$, $\frac{1}{11}$, $\frac{1}{18}$, $\frac{1}{27}$, $\frac{1}{38}$, ... . While Descartes theorem can be used to solve for each value, a much simpler formula exist, where if $r = \frac{|\overline{AB}|}{|\overline{AC}|}$ then 
+\begin{align*}
+    r_n = \frac{(1-r)*r}{2[n^2(1-r)^2+r]}
+\end{align*}
+It is also possible to use the property of inversion to solve for the radii of any circle in the chain. Knowing the radius of the first inverted circle (in our case, with $\bigodot{C_1}$ equal to $\bigodot{C_2}$, the radius of $\bigodot{C_2'} = \overline{|AC|} * \frac{1}{4}$), we can solve for the radius of the $nth$ circle by adding the radii of the stack inverted circles. After the Pythagorean theorem and subtracting known lengths, the equation above holds. 
+\newpage
+\section{Conclusion}
+\hspace{\parindent}Through time, geometers have picked up and put down this simple problem, adding onto it as they went, and discovering something new from the simple arbelos. Application of the Pappus chain are few, with a movement in Japanese Temple art adopting the pattern to decorate the walls with wooden tablets displaying the design. Shinto shrines or Buddhist temples have these tablets, known as Sangaku, displaying beautiful geometric images, some of which contained Pappus Chains(Normile). But beyond that, the Pappus chain serves only as a useful tool to explain geometrical principles that are otherwise dull or difficult to understand. 
+
+With elegance, symmetry, and repetition, the Pappus chain has earned a place on the shelf of beautiful mathematical images and entertaining anecdotes. It is a prime example of how ideas lost to history are whispered along from one scholar to another, until one can write it down on something that will last. From this lineage, one can carry these ideas further to apply to packing circles, cell division, or other endeavours, but the greatest value, in my opinion, comes from the graceful simplicity embodied in the simple kissing of circles. 
+
+\newpage
+\begin{thebibliography}{}
+\bibitem{Bankoff}
+Bankoff, L. "Are the Twin Circles of Archimedes Really Twins?" Math. Mag. 47, 214-218, 1974.
+
+\bibitem{Bruen}
+Bruen, J. C. Fisher & J. B. Wilker (1983) Apollonius by Inversion, Mathematics Magazine, 56:2, 97-103, DOI: 10.1080/0025570X.1983.11977025 
+
+\bibitem{Coxeter}
+H. S. M. Coxeter. Introduction to Geometry, 2nd ed., Wiley. New York, 1969. 
+
+\bibitem{Dedron}
+Dedron, Pierre, J. Itard (1959) Mathematics And Mathematicians, Vol. 1, p.149 (trans. Judith V. Field) (Transworld Student Library, 1974)
+
+\bibitem{Heath}
+ Heath, Thomas Little (1897), The Works of Archimedes, Cambridge University: University Press, pp. xxxii, 301–318, retrieved 2008-06-15
+
+\bibitem{Normile}
+ D. Normile, “Amateur” proofs blend religion and scholarship in ancient Japan, Science 307 (2005) 1715– 1716
+ 
+\bibitem{Schoch}
+Schoch, Thomas. “Arbelos, Amazing Properties.” Arbelos, 2015, www.retas.de/thomas/arbelos/arbelos.html.
+
+\bibitem{Patterson}
+Patterson, Boyd C. “The Origins of the Geometric Principle of Inversion.” Isis, vol. 19, no. 1, 1933, pp. 154–180. JSTOR, www.jstor.org/stable/225190.
+
+
+\end{thebibliography}
+
+
+
+\end{document}

@@ -1,0 +1,211 @@
+\documentclass[12pt]{article}
+
+% This file is a modified version of a tex file by Professor Ed Scheiermann from the Department of Applied Mathematics and
+% Statistics at Johns Hopkins University in Baltimore, Maryland. Many thanks for letting us use it.
+
+% This first part of the file is called the PREAMBLE. It includes
+% customizations and command definitions. The preamble is everything
+% between \documentclass and \begin{document}.
+
+% Anything that follows a `%' in a line is ignored by the TeX interpreter. We use this feature to
+% provide documentation for the TeX-file, as necessary.
+\usepackage[margin=1in]{geometry} % set the margins to 1in on all sides
+\usepackage{graphicx} % to include figures
+\usepackage{amsmath} % additional math symbols.
+\usepackage{amsfonts} % additional math fonts.
+\usepackage{amsthm} % better theorem environments
+\usepackage{amssymb}
+
+% shorthand for various theorem environments, numbered by section
+
+\newtheorem{thm}{Theorem}%[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{mydef}{Definition}
+
+\newcommand{\la}{\LaTeX} % shorthand... instead of typing `\LaTeX' every time I want
+% to use the fancy Latex expression.
+\newcommand{\bbn}{\mathbb{N}}
+\newcommand{\bbz}{\mathbb{Z}}
+\newcommand{\bbq}{\mathbb{Q}}
+\newcommand{\bbr}{\mathbb{R}}
+\newcommand{\emf}{\usefont{OT1}{cmr}{bx}{it}}
+
+
+\begin{document}
+
+
+\title{Math 181, Summer 2018: Final Paper}
+
+\author{David Durkin}
+
+\maketitle
+
+\begin{abstract}
+The purpose of this paper is to discuss the origin of complex numbers, their development over time, and historical proofs and problems that refined their expressions.
+\end{abstract}
+
+\section{Introduction}
+
+\hspace{\parindent} Complex Numbers when first presented to students seem subversive, complicated, and unnecessary. Being told your entire academic career you can't take the root of a negative number and then suddenly wielding these imaginary symbols is a bit shocking. Once introduced, the power and use of complex numbers is astounding. From solving cubic equations, to writing Fourier transforms, and even seeing applications in the physical and real word, complex numbers are a force to be reckoned with. Their origin is not too long ago, and they didn't grow up all at once. Over the course of a few decades complex numbers were worked and refined, fitting more and more precise definitions that allowed for amazing applications, and eventually permeating most math we now study today. 
+
+
+\section{Historical Context and Development}
+
+\hspace{\parindent} When most people think of a complex numbers, they think of $\sqrt{-1}$. But this seemingly simple representation is packed with years of push back and disdain. From as far back as 200BC, negative numbers were used, first in the Han Dynasty. Later they appeared in the Bakhshali Manuscript in India in the 4th century to represent debts. Even the Arabic's accepted the concept of negative numbers in the 10th century(Hodgkin). But like many other things in culture, even when an idea might be universally accepted, the Europeans were resistant. During the advent of complex numbers in the 16th century, negative numbers were still considered ''fictitious and useless'' and ''absurd numbers'', much like zero had been for many years(Greenwood). Although square roots had been known since the Babylonians, and Aryabhata's method was coined in the 5th century, it wasn't introduced to Europe until 1546 by Cataneo. Thus the scene was set for an age old problem to be solved. 
+
+ It was easily seen that a binomial equation had 2 solutions, and this could be geometrically represented as well. However the cubic function was shrouded in mystery. A famous example of a cubic was the one presented to Leonardo da Pisa in 1225 which he readily solved. It wasn’t until 1545 when the Italian Gerolamo Cardano proved and publish the solutions to the cubic in his work \textit{Ars Magna} (1545).Taking the general cubic equation
+\begin{align*}
+    x^3+ax^2+bx+c=0
+\end{align*}
+it can be reduced to the simpler form
+\begin{align*}
+    x^3+px+q=0
+\end{align*}
+ His formula for finding the roots using the diminished cubic was as follows
+\begin{align*}
+x=\root 3\of{\dfrac{q}{2}+\sqrt{(\dfrac{q}{2})^2-(\dfrac{p}{3})^3}}+\root 3\of{\dfrac{q}{2}-\sqrt{(\dfrac{q}{2})^2-(\dfrac{p}{3})^3}}
+\end{align*}
+\hspace{\parindent} Although fruitful, this equation carried much stigma. Some positive rational roots could be found, and even some controversial negatives, but issues arose when the radical had a negative number as the radicand. When they appeared in his processes in the form $a+\sqrt{-b}$, Cardano wrote that ''this case was impossible'' and he tried ''putting aside the mental torture involved'', calling the case \textit{casus irreducibilis} (Chapter 37 \textit{Ars Magna}). In 1572, Rafael Bombelli tried to tackle these impossibilities by considering the following depressed cubic
+\begin{align*}
+x^3=15x+4
+\end{align*}
+Bombelli had observed that the equation had a real root $4$, and knowing this, set out using Cardanos equation
+\begin{center}
+   4=\root3\of{2+\sqrt{(2)^2-(5)^3}}+\root3\of{2-\sqrt{(2)^2-(5)^3}}\\
+   4=\root3\of{2+\sqrt{-121}}+\root3\of{2-\sqrt{-121}}\\
+\end{center}
+Writing each cube root in the form $a+bi$ and $a-bi$ where $a=2$ and $b=11$ he resolves
+\begin{center}
+4=\root3\of{a+bi}+\root3\of{a-bi}\\
+4=\root3\of{2+11i}+\root3\of{2-11i}\\
+\end{center}
+And through algebraic manipulation, Bombelli found that
+\begin{align*}
+    (2+i)^3&=8+3*2^2i+3*2*i^2+i^3\\
+    &=2+11i\\
+    (2-i)^3&=2-11i\\
+\end{align*}
+thus he concluded upon 
+\begin{align*}
+    4&=(2+i)+(2-i)\\
+    4&=2+2\\
+\end{align*}
+Remarkably, the real solution was only found by going through the complex plane, and Bombelli remarked ''At first, the thing seemed to me to be based more on sophism than on truth, but I searched until I found the proof.''
+
+\section{Progess and Refinement}
+\hspace{\parindent}With such progress, Bombelli still did not consider negative roots as a solution to cubic functions, even though imaginary ones could be. Following this however, complex numbers began to spread and gained wider use.  In 1637, Rene Descartes gave these new numbers the term ''imaginary'', since one can imagine many roots based on the degree of a polynomial, but all such roots may not be represented, only imagined. By this time in the 17th century, John Wallis had begun to represent negatives on the number line, and even produced the first geometrical representation of the complex number $\sqrt{-1}$ (Kline). This concept of geometrical representation was then refined by Euler, who argued complex numbers could be represented as rectangular coordinates in a plane, where the x-axis represented real numbers, and the y-axis represented imaginary number. This was a major step up from Wallis' representation of the coordinate system. 
+
+From this geographical representation, the notation to write complex numbers in relation to trigonometric properties follows from the fact that a complex number is comprised of an x and y component. Graphically, a complex point on such a plane has a distance $r$ from the origin which is equal to $\sqrt{x^2+y^2}$, and its $x$ and $y$ components can be expressed in relation to the angle $\theta$ from the x-axis. Thus
+\begin{center}
+z=x+iy\\
+x=r*cos(\theta)\\
+y=r*sin(\theta)\\
+\therefore z=r*(cos(\theta)+i*sin(\theta))\\
+\end{center}
+From this representation we stumble upon Moivre’s theorem. Multiplying two complex numbers $z$ and $w$, written in trigonometric form, such that
+\begin{align*}
+z&=a+ib=|z|*(cos(\theta)+i*sin(\theta))\\
+w&=c+id=|w|*(cos(\alpha)+i*sin(\alpha))
+\end{align*}
+we find
+\begin{align*}
+z*w&=|z|*|w|*((cos(\alpha)cos(\theta)-sin(\alpha)sin(\theta))+i(cos(\alpha)sin(\theta)+cos(\theta)sin(\alpha)))\\
+&=|z|*|w|*(cos(\alpha+\theta)+isin(\alpha+\theta))
+\end{align*}
+From this we see that magnitudes multiply and angles add when two complex numbers are multiplied. Thus, if you have a complex number with magnitude one, such that $|z|=1$, and you multiply it to itself, you get
+\begin{align*}
+z*z=|z|*|z|*(cos(\theta+\theta)+isin(\theta+\theta)=1*(cos(2\theta)+isin(2\theta))
+\end{align*}
+Carrying this idea further, we arrive at Moivres theorem, that being
+\begin{align*}
+(cos(\theta)+isin(\theta))^n=cos(n\theta)+isin(n\theta)
+\end{align*}
+
+\section{Eulers Contribution}
+Euler continued this train of thought and arrived at his own formula, the renowned $e^{i\theta}=cos(\theta)+isin(\theta)$(Merino).
+To begin, define
+\begin{align*}
+e^z=\sum_{n=0}^{\infty} \dfrac{z^n}{n!}=\lim_{n\to\infty}(\dfrac{1}{0!}+\dfrac{x}{1!}+\dfrac{x^2}{2!}+\dfrac{x^3}{3!}+...+\dfrac{x^n}{n!})
+\end{align*} 
+We want to show $e^{z+w}=e^z*e^w$. Consider the theorem from real analysis, if $$\sum_{n=0}^{\infty}a_n, \sum_{n=0}^{\infty}b_n$$ are absolutely convergent then there is a product formula such that
+\begin{align*}
+(\sum_{n=0}^{\infty}a_n)(\sum_{n=0}^{\infty}b_n)=\sum_{n=0}^{\infty}\sum_{j=0}^{n}a_j*b_{n-j}
+\end{align*}
+
+This Cauchy product goes through all terms in the series, thus we can write
+\begin{align*}
+e^z*e^w&=\sum_{n=0}^{\infty}\dfrac{z^n}{n!}\sum_{n=0}^{\infty}\dfrac{w^n}{n!}
+=\sum_{n=0}^{\infty}\sum_{j=0}^{n}\dfrac{z^j}{j!}*\dfrac{w^{n-j}}{(n-j)!}
+\end{align*}
+
+We know
+\begin{align*}
+\binom nj &=\dfrac{n!}{j!(n-j)!}\\
+\end{align*}
+
+thus equation (1) becomes
+\begin{align*}
+=\sum_{n=0}^{\infty}\dfrac{1}{n!}\sum_{j=0}^{n} \binom nj z^jw^{n-j}\\
+\end{align*}
+
+Furthermore
+\begin{align*}
+    (z+w)^n=\sum_{j=0}^{n} \binom nj z^jw^{n-j}\\
+    \therefore \sum_{n=0}^{\infty} \dfrac {(z+w)^n}{n!} = e^{z+w}
+\end{align*}
+From here we find since 
+\begin{align*}
+    z=x+iy\implies e^z=e^xe^{iy} &= e^x\sum_{n=0}^{\infty} \dfrac {(iy)^n}{n!}\\
+    &= e^x[1+(iy)+\dfrac{(iy)^2}{2}+\dfrac{(iy)^3}{3!}+...]\\
+    &= e^x[1+(iy)-\dfrac{y^2}{2}-\dfrac{iy^3}{3!}+\dfrac{y^4}{4!}+\dfrac{iy^5}{5!}-...]\\
+    &= e^x[(1-\dfrac{y^2}{2}+\dfrac{(y)^4}{4!}-...)+i(y-\dfrac{y^3}{3!}+\dfrac{y^5}{5!}...)]\\
+    &=e^x[cos(y)+isin(y)]\\
+\end{align*}
+\hspace{\parindent}If we have a complex number of magnitude 1, such that $e^x$=1, then we achieve the aforementioned formula. Not only can a complex number then be written as a coordinate, but also a exponential, and furthermore a trigonometric function. In this way, Euler was able to marry three unique areas of math into one beautiful equation.From this formula we can also see that complex exponential are periodic, in intervals of $2\pi$, leading to further notation and convention denoted the principal argument and argument. In this form, $\theta$ ranges from $-\pi<\theta<\pi$. The principal argument, denoted $Arg(z)$ defines $\theta$ within this range, and $arg(z)$ is simply $Arg(z)+2\pi n$ (Das).
+
+\section{Formal Definitions and Further Applications}
+\hspace{\parindent}A few years later, after this foundational breakthrough, imaginary numbers and complex analysis began to gain credibility and take form. In 1831, William Hamilton cleaned up the definition for complex numbers, that being that a complex number is simply a pair of real numbers equipped with two operations. 
+\begin{center}
+    \bbr \times \bbr \to \mathbb{C}\\
+    (a, b)+(c, d) = (a + c, b + d) and (a, b)(c, d) = (ac - bd, bc + ad)
+\end{center}
+where $(1,0)=1$ and $(0,1)=i$. In the same year Guass published his geometric representation for complex numbers and coined the same term. Following all this, Cauchy began his work with analytic funtions and pressing into the field, with the Cauchy-Riemann equations, the Cauchy-Goursat theorems, and many other postulates, equations, and theorems. Today complex numbers and analysis are used in phasor notation for engineering, Fourier transforms for commutations, quantum mechanics in physics, and many other mathematically based fields. 
+
+\section{Conclusion}
+All in all, complex numbers had a rough journey of being suppressed and denied from their full potential for roughly half a millenia. It wasn't until a need presented itself for them to be even considered and brought to the forefront, and even then the backlash of their arrival was staunch. Through many years, carried carelessly by the hands of many mathematicians, it took time for them to be valued and refined, and once birthed, they permeated all fields of study that are relevant today. The story of the complex number is a reminder not to disregard what may seem hard or nominal right away. 
+
+\begin{thebibliography}{9}
+\bibitem{Bombelli}
+Bombelli, R. (1966). L’Algebra. U. Forti & E. Bortolotti (Eds.). Milano: Feltrinelli.
+
+\bibitem{Cardano}
+Cardano, Girolamo, and T. Richard Witmer. The Rules of Algebra : (ars Magna). First publ. 1993, reissued Mineola, NY: Dover Publications, 2007.
+
+\bibitem{Das}
+Das, Ritwik. “What Is the Difference between Principal Argument and General Argument of a Complex Number?” Quora, 28 Oct. 2017, www.quora.com/What-is-the-difference-between-principal-argument-and-general-argument-of-a-complex-number.
+
+\bibitem{Euler}
+“Euler's Formula for Complex Numbers.” Eulers Formula for Complex Numbers, www.mathsisfun.com/algebra/eulers-formula.html.
+
+\bibitem{Greenwood}
+ Famous Problems and Their Mathematicians, Greenwood Publishing Group, 1999, p. 56, ISBN 9781563084461.
+ 
+\bibitem{Kline}
+M. Kline, Mathematical Thought From Ancient to Modern Times, v. 2, Oxford University Press, 1972
+
+\bibitem{Hodgkin}
+Luke Hodgkin (2005). A History of Mathematics: From Mesopotamia to Modernity. Oxford University Press. p. 88. ISBN 978-0-19-152383-0. Liu is explicit on this; at the point where the Nine Chapters give a detailed and helpful 'Sign Rule'”
+
+\bibitem{Merino}
+Merino, Orlando. A Short History of Complex Numbers. A Short History of Complex Numbers.
+
+\end{thebibliography}
+ 
+\end{document}
+
+
+
+
